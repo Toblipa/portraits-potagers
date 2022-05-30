@@ -14,15 +14,13 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-  background-image: url("./img/Bg-titre2.png");
+  background-image: url("./img/bg-left.png"), url("./img/bg-right.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -154,9 +152,8 @@ a:hover {
   display: inline-block;
   width: 160px;
   height: 160px;
-  font-family: "Raleway", Helvetica, Arial, sans-serif;
   font-weight: 500;
-  color: #666;
+  color: rgb(199, 199, 199);
   border: 6px solid #199EB8;
   border-radius: 50%;
   padding: 55px 25px 0 25px;

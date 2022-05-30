@@ -5,37 +5,47 @@ const About = forwardRef(({}, ref) => {
     return (
         <section id="about" className="about" ref={ref}>
             <Container className="text-center">
-            <h2>About Bell Theme</h2>
-            <p>
-                Voluptua scripserit per ad, laudem viderer sit ex. Ex alia corrumpit voluptatibus usu, sed unum convenire id. Ut cum nisl moderatius, per nihil dicant commodo an. Eum tacimates erroribus ad. Atqui feugiat euripidis ea pri, sed veniam tacimates ex. Menandri
-                temporibus an duo.
-            </p>
+                <Row className="justify-content-md-center">
+                    <Col md="5">
+                        <h2>Concept</h2>
+                        <p>
+                            As scientific illustrators, my partner and I decided to create a collection
+                            of 10 000 paintings made up of various hand-drawn fruits
+                            and vegetables rearranged in different Portraits.
 
-            <Row className="stats-row">
-                <div className="stats-col text-center col-md-3 col-sm-6">
-                <div className="circle">
-                    <span className="stats-no" data-toggle="counter-up">232</span> Satisfied Customers
-                </div>
-                </div>
+                            These are the NFT we sell as artworks for the price of an organic
+                            vegetable basket between 15 and 25 euros.
 
-                <div className="stats-col text-center col-md-3 col-sm-6">
-                <div className="circle">
-                    <span className="stats-no" data-toggle="counter-up">79</span> Released Projects
-                </div>
-                </div>
+                            The sales will directly benefit our permacultural project and help enhancing
+                            local biodiversity.
+                        </p>
+                    </Col>
+                </Row>
+                {/* <Row className="stats-row">
+                    <div className="stats-col text-center col-md-3 col-sm-6">
+                    <div className="circle">
+                        <span className="stats-no" data-toggle="counter-up">232</span> Satisfied Customers
+                    </div>
+                    </div>
 
-                <div className="stats-col text-center col-md-3 col-sm-6">
-                <div className="circle">
-                    <span className="stats-no" data-toggle="counter-up">1,463</span> Hours Of Support
-                </div>
-                </div>
+                    <div className="stats-col text-center col-md-3 col-sm-6">
+                    <div className="circle">
+                        <span className="stats-no" data-toggle="counter-up">79</span> Released Projects
+                    </div>
+                    </div>
 
-                <div className="stats-col text-center col-md-3 col-sm-6">
-                <div className="circle">
-                    <span className="stats-no" data-toggle="counter-up">15</span> Hard Workers
-                </div>
-                </div>
-            </Row>
+                    <div className="stats-col text-center col-md-3 col-sm-6">
+                    <div className="circle">
+                        <span className="stats-no" data-toggle="counter-up">1,463</span> Hours Of Support
+                    </div>
+                    </div>
+
+                    <div className="stats-col text-center col-md-3 col-sm-6">
+                    <div className="circle">
+                        <span className="stats-no" data-toggle="counter-up">15</span> Hard Workers
+                    </div>
+                    </div>
+                </Row> */}
             </Container>
         </section>
     )
