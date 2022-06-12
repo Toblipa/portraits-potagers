@@ -1,5 +1,7 @@
 .App {
+  height: 100vh;
   text-align: center;
+  overflow-y: scroll;
 }
 
 .App-logo {
@@ -66,10 +68,23 @@ h4 {
   font-size: 18px;
 }
 
+.wrapper-bg {
+  height: 0;
+  overflow: visible;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0px;
+}
+
 .fixed-bg {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.fixed-bg::after {
+  content: ""; 
+  background-attachment: scroll;
 }
 
 .bg-left {
@@ -99,6 +114,10 @@ button {
   border: none;
   color: #fff;
   background-color: transparent;
+}
+
+figure {
+  margin: 0;
 }
 
 /* ==================================================
@@ -136,25 +155,6 @@ a:hover {
   text-decoration: none !important;
 }
 
-.scrolltop {
-  display: none;
-  position: fixed;
-  bottom: 15px;
-  right: 15px;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: #199EB8;
-  color: #fff;
-  text-align: center;
-  font-size: 24px;
-}
-
-.scrolltop:hover, .scrolltop:active, .scrolltop:focus {
-  color: #fff !important;
-  opacity: .75;
-}
-
 .title {
   margin: 3.5rem auto;
 }
@@ -187,3 +187,145 @@ a:hover {
   width: 36em;
   padding: 0.7em;
 }
+
+/* ==================================================
+  Side menu
+  ================================================== */
+  .side-menu-enter {
+    opacity: 0;
+    transform:translateX(-100%);
+  }
+  
+  .side-menu-enter-active {
+    opacity: 1;
+    transform:translateX(0);
+    transition: opacity 300ms, transform 300ms;
+  }
+  
+  .side-menu-exit {
+    opacity: 1;
+    transform:translateX(0);
+  }
+  
+  .side-menu-exit-active {
+    opacity: 0;
+    transform:translateX(-100%);
+    transition: opacity 300ms, transform 300ms;
+  }
+
+  .flex{
+    display:flex;
+  }
+
+  nav {
+    background: none;
+    height: 0;
+    overflow: visible;
+    width: 350px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 5rem;
+    text-align: start;
+    z-index: 1;
+  }
+  
+  nav a {
+    text-decoration:none;
+    color:#fff;
+    font-size: 28px;
+    text-transform: uppercase;
+    display:block;
+    cursor: pointer;
+  }
+
+  nav > .side-menu {
+    padding: 2rem 5rem;
+    background:linear-gradient(to right, #212A31, #212a3100);
+    height: fit-content;
+  }
+
+  .fa {
+    position: relative;
+    top:12px;
+    width: 70px;
+    height: 36px;
+    text-align: center;
+    font-size:20px;
+  }
+
+  nav span {
+    position:relative;
+  }
+
+  .logo {
+    position:relative;
+    top:0px;
+    padding:1px;
+    color:#fff;
+    font-family: 'Big Shoulders Display', cursive;
+    text-align:center;
+    line-height: 0.8;
+  }
+
+  .logo p{
+    color:#fff;
+  }
+
+  nav a:hover{
+    opacity: .75;
+  }
+
+  /* ============================================== */
+
+  .content {
+    position: relative;
+    margin: -100vh auto 0;
+    padding: var(--space);
+    width: calc(100% - var(--space));
+  }
+  
+  .image-container {
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+  }
+  
+  .image-container img {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .image-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(
+      to bottom,
+      hsla(5, 15%, 5%, 0) 0%,
+      hsla(5, 15%, 5%, 0.013) 8.1%,
+      hsla(5, 15%, 5%, 0.049) 15.5%,
+      hsla(5, 15%, 5%, 0.104) 22.5%,
+      hsla(5, 15%, 5%, 0.175) 29%,
+      hsla(5, 15%, 5%, 0.259) 35.3%,
+      hsla(5, 15%, 5%, 0.352) 41.2%,
+      hsla(5, 15%, 5%, 0.45) 47.1%,
+      hsla(5, 15%, 5%, 0.55) 52.9%,
+      hsla(5, 15%, 5%, 0.648) 58.8%,
+      hsla(5, 15%, 5%, 0.741) 64.7%,
+      hsla(5, 15%, 5%, 0.825) 71%,
+      hsla(5, 15%, 5%, 0.896) 77.5%,
+      hsla(5, 15%, 5%, 0.951) 84.5%,
+      hsla(5, 15%, 5%, 0.987) 91.9%,
+      hsl(5, 15%, 5%) 100%
+    );
+  }

@@ -1,10 +1,11 @@
-import React from 'react';
-import { Container, Row, Col, Accordion, Card, Button} from 'react-bootstrap';
-import ImgFaq from '../img/faq.png'; // Gives image path
+import React, {forwardRef} from 'react';
+import { Container, Row, Col, Accordion } from 'react-bootstrap';
+import ImgFaq from '../img/faq.png';
 
-function FAQ () {
+
+const FAQ = forwardRef(({}, ref) => {
     return (
-        <section id="faq" className="faq">
+        <section id="faq" className="faq" ref={ref}>
             <Container>
                 <Row>
                     <Col md="2" />
@@ -80,6 +81,6 @@ function FAQ () {
             </Container>
         </section>
     );
-}
+});
 
 export default FAQ;

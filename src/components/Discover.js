@@ -1,5 +1,5 @@
 import React from 'react';
-import ImgDiscover from '../img/btn-discover.png'; // Gives image path
+import ImgDiscover from '../img/btn-discover.png';
 
 function Discover ({onClick}) {
     return (

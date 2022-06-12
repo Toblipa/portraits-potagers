@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {forwardRef} from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Titre from './Titre';
 import Discover from './Discover';
 
-function Header ({onClickDiscover}) {
+const Header = forwardRef(({onClickDiscover}, ref) => {
     return (
-        <header className="App-header">
+        <header className="App-header" ref={ref}>
             <Container className="text-center">
                 <Row className="justify-content-md-center">
                     <Col md="5">
@@ -25,6 +25,6 @@ function Header ({onClickDiscover}) {
             </Container>
         </header>
     );
-}
+});
 
 export default Header;

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {forwardRef} from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import ImgTeam from '../img/team.png'; // Gives image path
-import Portrait9 from '../img/9.png'; // Gives image path
+import ImgTeam from '../img/team.png';
+import Portrait9 from '../img/9.png';
 
-function Team () {
+const Team = forwardRef(({}, ref) => {
     return (
-        <section id="team" className="team">
+        <section id="team" className="team" ref={ref}>
             <Container>
                 <Row className="justify-content-md-end">
                     <Col className="text-right" md="8">
@@ -38,6 +38,6 @@ function Team () {
             </Container>
         </section>
     );
-}
+});
 
 export default Team;

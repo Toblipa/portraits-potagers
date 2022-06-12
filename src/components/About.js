@@ -1,13 +1,13 @@
-import React, {forwardRef, useRef} from 'react';
+import React, {forwardRef} from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import ImgConcept from '../img/concept.png'; // Gives image path
-import Portrait9 from '../img/9.png'; // Gives image path
-import Portrait12 from '../img/12.png'; // Gives image path
-import Traits from '../img/traits.png'; // Gives image path
-import RarityLevel from '../img/rarity-level.png'; // Gives image path
-import Img1 from '../img/1..png'; // Gives image path
-import Img2 from '../img/2..png'; // Gives image path
-import Img3 from '../img/3..png'; // Gives image path
+import ImgConcept from '../img/concept.png';
+import Portrait9 from '../img/9.png';
+import Portrait12 from '../img/12.png';
+import Traits from '../img/traits.png';
+import RarityLevel from '../img/rarity-level.png';
+import Img1 from '../img/1..png';
+import Img2 from '../img/2..png';
+import Img3 from '../img/3..png';
 
 const About = forwardRef(({}, ref) => {
     return (

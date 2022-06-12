@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {forwardRef} from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import ImgCommunity from '../img/community.png'; // Gives image path
 import ImgFarm from '../img/farm.jpg'; // Gives image path
 
-function Community () {
+const Community = forwardRef(({}, ref) => {
     return (
-        <section id="community" className="community">
+        <section id="community" className="community" ref={ref}>
             <Container>
                 <Row>
                     <Col md="2" />
@@ -30,6 +30,6 @@ function Community () {
             </Container>
         </section>
     );
-}
+});
 
 export default Community;

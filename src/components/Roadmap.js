@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {forwardRef} from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import ImgRoadmap from '../img/roadmap.png'; // Gives image path
 
-function Roadmap () {
+const Roadmap = forwardRef(({}, ref) => {
     return (
-        <section id="roadmap" className="roadmap">
+        <section id="roadmap" className="roadmap" ref={ref}>
             <Container>
                 <Row className="justify-content-md-end">
                     <Col className="text-right" md="8">
@@ -16,6 +16,6 @@ function Roadmap () {
             </Container>
         </section>
     );
-}
+});
 
 export default Roadmap;
