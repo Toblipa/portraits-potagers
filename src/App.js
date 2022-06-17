@@ -8,11 +8,11 @@ import Community from "./components/Community";
 import Roadmap from "./components/Roadmap";
 import FAQ from "./components/FAQ";
 import Menu from "./components/Menu";
+
 import ImgRight from './img/bg-right.png';
 import ImgLeft from './img/bg-left.png';
 
 import './App.css';
-
 
 function App () {
   const[showMenu, setShowMenu] = useState(false);

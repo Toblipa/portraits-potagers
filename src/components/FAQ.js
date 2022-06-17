@@ -1,7 +1,7 @@
 import React, {forwardRef} from 'react';
 import { Container, Row, Col, Accordion } from 'react-bootstrap';
-import ImgFaq from '../img/faq.png';
 
+import ImgFaq from '../img/faq.png';
 
 const FAQ = forwardRef(({}, ref) => {
     return (
@@ -13,7 +13,10 @@ const FAQ = forwardRef(({}, ref) => {
                         <div className='img-title'><img src={ImgFaq} alt="FAQ" /></div>
                         <Accordion alwaysOpen>
                             <Accordion.Item eventKey="0">
-                                <Accordion.Header>WHY PORTRAITS MADE UP OF FRUITS AND VEGETABLES?</Accordion.Header>
+                                <Accordion.Header>
+                                    WHY PORTRAITS MADE UP OF FRUITS AND VEGETABLES?
+                                    <i className="bi bi-chevron-right accordion-arrow" />
+                                </Accordion.Header>
                                 <Accordion.Body>
                                 Arcimboldo paved the way with his astonishing four seasons paintings!<br/>
                                 His work inspired us and we decided to adopt his artistic approach
@@ -21,7 +24,10 @@ const FAQ = forwardRef(({}, ref) => {
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="1">
-                                <Accordion.Header>WHAT IS AN NFT?</Accordion.Header>
+                                <Accordion.Header>
+                                    WHAT IS AN NFT?
+                                    <i className="bi bi-chevron-right accordion-arrow" />
+                                </Accordion.Header>
                                 <Accordion.Body>
                                 NFT stands for non-fungible token. It has unique attributes that makes
                                 it different from something else in the same asset class. Like a painting,
@@ -37,7 +43,10 @@ const FAQ = forwardRef(({}, ref) => {
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="2">
-                                <Accordion.Header>WHY TEZOS BLOCKCHAIN?</Accordion.Header>
+                                <Accordion.Header>
+                                    WHY TEZOS BLOCKCHAIN?
+                                    <i className="bi bi-chevron-right accordion-arrow" />
+                                </Accordion.Header>
                                 <Accordion.Body>
                                 Tezos is a public blockchain with a significantly low carbon footprint
                                 thanks to its proof of stake protocol…<br/>
@@ -46,13 +55,19 @@ const FAQ = forwardRef(({}, ref) => {
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="3">
-                                <Accordion.Header>WHEN WILL THE NFTs BE AVAILABLE FOR SALE?</Accordion.Header>
+                                <Accordion.Header>
+                                    WHEN WILL THE NFTs BE AVAILABLE FOR SALE?
+                                    <i className="bi bi-chevron-right accordion-arrow" />
+                                </Accordion.Header>
                                 <Accordion.Body>
                                 We plan to open the public sale in July. More precisions in June.
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="4">
-                                <Accordion.Header>HOW CAN I PURCHASE PORTRAITS POTAGERS NFTs?</Accordion.Header>
+                                <Accordion.Header>
+                                    HOW CAN I PURCHASE PORTRAITS POTAGERS NFTs?
+                                    <i className="bi bi-chevron-right accordion-arrow" />
+                                </Accordion.Header>
                                 <Accordion.Body>
                                 To purchase a Portrait Potager NFT, you must create your wallet
                                 with Kukai, a browser based wallet for the Tezos blockchain.<br/>
@@ -61,7 +76,10 @@ const FAQ = forwardRef(({}, ref) => {
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="5">
-                                <Accordion.Header>HOW CAN I GET ACCESS TO THE NFT HOLDERS CONTENT?</Accordion.Header>
+                                <Accordion.Header>
+                                    HOW CAN I GET ACCESS TO THE NFT HOLDERS CONTENT?
+                                    <i className="bi bi-chevron-right accordion-arrow" />
+                                </Accordion.Header>
                                 <Accordion.Body>
                                 To do so, nothing simpler: join our Discord and follow the instructions from
                                 the “getting started” category and discover hidden channels reserved for
@@ -69,10 +87,13 @@ const FAQ = forwardRef(({}, ref) => {
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="6">
-                                <Accordion.Header>DO I GET COMPLET OWNERSHIP OF MY PORTRAIT POTAGER?</Accordion.Header>
+                                <Accordion.Header>
+                                    DO I GET COMPLET OWNERSHIP OF MY PORTRAIT POTAGER?
+                                    <i className="bi bi-chevron-right accordion-arrow" />
+                                </Accordion.Header>
                                 <Accordion.Body>
                                 When you mint or buy a Portrait Potager, you get the full rights to the 
-                                purchased art – copying, distribution, and commercial use included.
+                                purchased art - copying, distribution, and commercial use included.
                                 </Accordion.Body>
                             </Accordion.Item>
                         </Accordion>

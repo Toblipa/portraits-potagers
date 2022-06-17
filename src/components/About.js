@@ -1,5 +1,6 @@
 import React, {forwardRef} from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+
 import ImgConcept from '../img/concept.png';
 import Portrait9 from '../img/9.png';
 import Portrait12 from '../img/12.png';

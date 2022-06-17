@@ -1,7 +1,8 @@
 import React, {forwardRef} from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import ImgCommunity from '../img/community.png'; // Gives image path
-import ImgFarm from '../img/farm.jpg'; // Gives image path
+
+import ImgCommunity from '../img/community.png';
+import ImgFarm from '../img/farm.jpg';
 
 const Community = forwardRef(({}, ref) => {
     return (

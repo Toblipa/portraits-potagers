@@ -41,14 +41,16 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Nunito Bold", "Raleway", Helvetica, Arial, sans-serif;
+  font-family: "Nunito";
+  font-weight: 700;
   text-transform: uppercase;
 }
 
 p {
   line-height: 1.2;
   color: #fff;
-  font-family: "Nunito Light", "Raleway", Helvetica, Arial, sans-serif;
+  font-family: "Nunito";
+  font-weight: 400;
 }
 
 h1 {
@@ -133,6 +135,24 @@ figure {
   font-size: 18px;
   margin-bottom: 0;
   border-bottom: 1px solid #fff;
+}
+
+button[class~="collapsed"] + button[class="accordion-button"] .accordion-arrow::before {
+  transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+}
+
+button[class="accordion-button"] .accordion-arrow::before {
+  transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
 }
 
 .discover {
@@ -255,20 +275,7 @@ a:hover {
 
   nav span {
     position:relative;
-  }
-
-  .logo {
-    position:relative;
-    top:0px;
-    padding:1px;
-    color:#fff;
-    font-family: 'Big Shoulders Display', cursive;
-    text-align:center;
-    line-height: 0.8;
-  }
-
-  .logo p{
-    color:#fff;
+    font-weight: 700;
   }
 
   nav a:hover{
