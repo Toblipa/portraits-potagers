@@ -11,7 +11,7 @@ const Community = forwardRef(({}, ref) => {
                 <Row>
                     <Col md="2" />
                     <Col className="text-left" md="6">
-                        <div className='img-title'><img src={ImgCommunity} alt="Community" /></div>
+                        <div className='img-title mb-5'><img src={ImgCommunity} alt="Community" /></div>
                         <p>
                             As scientific illustrators, my partner and I decided to create a collection
                             of 10 000 paintings made up of various hand-drawn fruits

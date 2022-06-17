@@ -17,7 +17,7 @@ const About = forwardRef(({}, ref) => {
                 <Row>
                     <Col md="2" />
                     <Col className="text-left" md="5">
-                        <div className='img-title'><img src={ImgConcept} alt="Concept" /></div>
+                        <div className='img-title mb-5'><img src={ImgConcept} alt="Concept" /></div>
                         <p>
                             As scientific illustrators, my partner and I decided to create a collection
                             of 10 000 paintings made up of various hand-drawn fruits
@@ -35,14 +35,14 @@ const About = forwardRef(({}, ref) => {
                 </Row>
                 <Row>
                     <Col md="2" />
-                    <Col className="text-left" md="8">
+                    <Col className="text-left flex" md="8">
                         <div className='portrait'><img src={Portrait9} alt="portrait" /></div>
                         <div className='portrait'><img src={Portrait12} alt="portrait" /></div>
                     </Col>
                 </Row>
                 <Row>
                     <Col md="2" />
-                    <Col className="text-left" md="8">
+                    <Col className="text-left flex" md="8">
                         <div className='portrait'><img src={Portrait9} alt="portrait" /></div>
                         <div className='portrait'><img src={Portrait12} alt="portrait" /></div>
                     </Col>
@@ -50,14 +50,14 @@ const About = forwardRef(({}, ref) => {
                 <Row className='mt-5'>
                     <Col md="2" />
                     <Col className="text-left d-inline-flex" md="5">
-                        <div className='number'><img src={Traits} alt="200" /></div>
+                        <div className='img-title'><img src={Traits} alt="200" /></div>
                         <h2 className='title-bottom'>Traits</h2>
                     </Col>
                 </Row>
                 <Row className='mt-5'>
                     <Col md="2" />
                     <Col className="text-left d-inline-flex" md="5">
-                        <div className='number'><img src={RarityLevel} alt="3" /></div>
+                        <div className='img-title'><img src={RarityLevel} alt="3" /></div>
                         <h2 className='title-bottom'>Rarity levels</h2>
                     </Col>
                 </Row>

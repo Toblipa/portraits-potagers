@@ -10,11 +10,11 @@ const FAQ = forwardRef(({}, ref) => {
                 <Row>
                     <Col md="2" />
                     <Col className="text-left" md="6">
-                        <div className='img-title'><img src={ImgFaq} alt="FAQ" /></div>
+                        <div className='img-title mb-5'><img src={ImgFaq} alt="FAQ" /></div>
                         <Accordion alwaysOpen>
                             <Accordion.Item eventKey="0">
                                 <Accordion.Header>
-                                    WHY PORTRAITS MADE UP OF FRUITS AND VEGETABLES?
+                                    <span>WHY PORTRAITS MADE UP OF FRUITS AND VEGETABLES?</span>
                                     <i className="bi bi-chevron-right accordion-arrow" />
                                 </Accordion.Header>
                                 <Accordion.Body>
@@ -25,7 +25,7 @@ const FAQ = forwardRef(({}, ref) => {
                             </Accordion.Item>
                             <Accordion.Item eventKey="1">
                                 <Accordion.Header>
-                                    WHAT IS AN NFT?
+                                    <span>WHAT IS AN NFT?</span>
                                     <i className="bi bi-chevron-right accordion-arrow" />
                                 </Accordion.Header>
                                 <Accordion.Body>
@@ -44,7 +44,7 @@ const FAQ = forwardRef(({}, ref) => {
                             </Accordion.Item>
                             <Accordion.Item eventKey="2">
                                 <Accordion.Header>
-                                    WHY TEZOS BLOCKCHAIN?
+                                    <span>WHY TEZOS BLOCKCHAIN?</span>
                                     <i className="bi bi-chevron-right accordion-arrow" />
                                 </Accordion.Header>
                                 <Accordion.Body>
@@ -56,7 +56,7 @@ const FAQ = forwardRef(({}, ref) => {
                             </Accordion.Item>
                             <Accordion.Item eventKey="3">
                                 <Accordion.Header>
-                                    WHEN WILL THE NFTs BE AVAILABLE FOR SALE?
+                                    <span>WHEN WILL THE NFTs BE AVAILABLE FOR SALE?</span>
                                     <i className="bi bi-chevron-right accordion-arrow" />
                                 </Accordion.Header>
                                 <Accordion.Body>
@@ -65,7 +65,7 @@ const FAQ = forwardRef(({}, ref) => {
                             </Accordion.Item>
                             <Accordion.Item eventKey="4">
                                 <Accordion.Header>
-                                    HOW CAN I PURCHASE PORTRAITS POTAGERS NFTs?
+                                    <span>HOW CAN I PURCHASE PORTRAITS POTAGERS NFTs?</span>
                                     <i className="bi bi-chevron-right accordion-arrow" />
                                 </Accordion.Header>
                                 <Accordion.Body>
@@ -77,7 +77,7 @@ const FAQ = forwardRef(({}, ref) => {
                             </Accordion.Item>
                             <Accordion.Item eventKey="5">
                                 <Accordion.Header>
-                                    HOW CAN I GET ACCESS TO THE NFT HOLDERS CONTENT?
+                                    <span>HOW CAN I GET ACCESS TO THE NFT HOLDERS CONTENT?</span>
                                     <i className="bi bi-chevron-right accordion-arrow" />
                                 </Accordion.Header>
                                 <Accordion.Body>
@@ -88,7 +88,7 @@ const FAQ = forwardRef(({}, ref) => {
                             </Accordion.Item>
                             <Accordion.Item eventKey="6">
                                 <Accordion.Header>
-                                    DO I GET COMPLET OWNERSHIP OF MY PORTRAIT POTAGER?
+                                    <span>DO I GET COMPLET OWNERSHIP OF MY PORTRAIT POTAGER?</span>
                                     <i className="bi bi-chevron-right accordion-arrow" />
                                 </Accordion.Header>
                                 <Accordion.Body>

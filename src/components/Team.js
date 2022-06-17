@@ -10,7 +10,9 @@ const Team = forwardRef(({}, ref) => {
                 <Row className="justify-content-md-end">
                     <Col className="text-right" md="8">
                         <Row>
-                            <div style={{marginLeft: 'auto'}} className='img-title justify-content-end'><img src={ImgTeam} alt="Team" /></div>
+                            <div style={{marginLeft: 'auto'}} className='img-title mb-5 justify-content-end'>
+                                <img src={ImgTeam} alt="Team" />
+                            </div>
                         </Row>
                         <h2>Creators and Farmers</h2>
                         <Row className="mb-5">
