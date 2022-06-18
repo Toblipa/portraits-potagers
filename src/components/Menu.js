@@ -32,8 +32,8 @@ const Menu = forwardRef(({scrollTo}, ref) => {
                 </div>
                 <div className='social-media wrapper-bg-gradient mt-5'>
                     <p> Join us on
-                        <img src={ImgDiscord} style={{width: '35px', margin:'0px 15px'}} alt="discord" />
-                        <img src={ImgTwitter} style={{width: '35px'}} alt="twitter" />
+                        <img src={ImgDiscord} style={{width: '30px', margin:'0px 10px'}} alt="discord" />
+                        <img src={ImgTwitter} style={{width: '30px'}} alt="twitter" />
                     </p>
                 </div>
             </Navbar.Collapse>

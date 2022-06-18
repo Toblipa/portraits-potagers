@@ -27,7 +27,7 @@ const About = forwardRef(({}, ref) => {
                         <div className='img-title mb-5'><img src={TitleConcept} alt="Concept" /></div>
                         <p>
                             As <b>scientific illustrators</b>, my partner and I decided to create a collection
-                            of <b>1 111 paintings</b> made up of various <b>hand-drawn fruits
+                            of <b>1&nbsp;111 paintings</b> made up of various <b>hand-drawn fruits
                             and vegetables</b> rearranged in different Portraits.
                         </p>
                         <p>
@@ -67,8 +67,8 @@ const About = forwardRef(({}, ref) => {
                 <Row className='mt-5'>
                     <Col className="text-left d-inline-flex">
                         <div className='portrait'><img src={RarityLevel1} alt="3" /></div>
-                        <div className='number title-bottom'><img src={Img1} alt="1" /></div>
-                        <p className='title-bottom'>
+                        <div className='number text-bottom'><img src={Img1} alt="1" /></div>
+                        <p className='text-bottom'>
                             <b>Fruits and vegetables</b><br /><br />
                             <span>Organic fruits and vegetables,<br /> aromatic herbs, mushrooms...</span>
                         </p>
@@ -77,8 +77,8 @@ const About = forwardRef(({}, ref) => {
                 <Row className='mt-3'>
                     <Col className="text-left d-inline-flex">
                         <div className='portrait'><img src={RarityLevel2} alt="RarityLevel2" /></div>
-                        <div className='number title-bottom'><img src={Img2} alt="2" /></div>
-                        <p className='title-bottom'>
+                        <div className='number text-bottom'><img src={Img2} alt="2" /></div>
+                        <p className='text-bottom'>
                             <b>Animals</b><br /><br />
                             <span>Frog, dragonfly, bees, bird, <br />chameleon...</span>
                         </p>
@@ -87,8 +87,8 @@ const About = forwardRef(({}, ref) => {
                 <Row className='mt-3'>
                     <Col className="text-left d-inline-flex">
                         <div className='portrait'><img src={RarityLevel3} alt="RarityLevel3" /></div>
-                        <div className='number title-bottom'><img src={Img3} alt="3" /></div>
-                        <p className='title-bottom'>
+                        <div className='number text-bottom'><img src={Img3} alt="3" /></div>
+                        <p className='text-bottom'>
                             <b>Garden and kitchen tools</b><br /><br />
                             <span>Steamer, garden hose, pan...</span>
                         </p>
