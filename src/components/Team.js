@@ -19,7 +19,7 @@ const Team = forwardRef(({}, ref) => {
                         </Row>
                         <h2>Creators and Farmers</h2>
                         <Row className="mb-5 justify-content-md-end">
-                            <Col xl="5">
+                            <Col xl="5" className='mb-5'>
                                 <div className='portrait-team'><img src={Wladimir} alt="portrait" /></div>
                                 <div><b>Wladimir Peltzer</b> <br />Drawer</div>
                                 <a href='#'>Learn more</a>
@@ -31,7 +31,7 @@ const Team = forwardRef(({}, ref) => {
                             </Col>
                         </Row>
                         <Row className="mt-5 justify-content-end">
-                            <h2 className="mt-5">Developer</h2>
+                            <h2 className="mt-5 mr-3">Developer</h2>
                         </Row>
                         <Row>
                             <Col>
