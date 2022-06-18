@@ -1,38 +1,43 @@
 import React, {forwardRef} from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import ImgTeam from '../img/team.png';
-import Portrait9 from '../img/9.png';
+
+import TitleTeam from '../img/titles/team.png';
+import Diane from '../img/team/diane.jpg';
+import Pablo from '../img/team/pablo.jpg';
+import Wladimir from '../img/team/wladimir.jpg';
 
 const Team = forwardRef(({}, ref) => {
     return (
         <section id="team" className="team" ref={ref}>
-            <Container>
+            <Container fluid>
                 <Row className="justify-content-md-end">
-                    <Col className="text-right" md="8">
+                    <Col className="text-right">
                         <Row>
-                            <div style={{marginLeft: 'auto'}} className='img-title mb-5 justify-content-end'>
-                                <img src={ImgTeam} alt="Team" />
+                            <div className='img-title mb-5 justify-content-end'>
+                                <img src={TitleTeam} alt="Team" />
                             </div>
                         </Row>
                         <h2>Creators and Farmers</h2>
-                        <Row className="mb-5">
-                            <Col>
-                                <div className='portrait'><img src={Portrait9} alt="portrait" /></div>
+                        <Row className="mb-5 justify-content-md-end">
+                            <Col xl="5">
+                                <div className='portrait-team'><img src={Wladimir} alt="portrait" /></div>
                                 <div><b>Wladimir Peltzer</b> <br />Drawer</div>
                                 <a href='#'>Learn more</a>
                             </Col>
-                            <Col>
-                                <div className='portrait'><img src={Portrait9} alt="portrait" /></div>
+                            <Col xl="5">
+                                <div className='portrait-team'><img src={Diane} alt="portrait" /></div>
                                 <div><b>Diane Rottner</b> <br />Colorist</div>
                                 <a href='#'>Learn more</a>
                             </Col>
                         </Row>
-                        <h2>Developer</h2>
+                        <Row className="mt-5 justify-content-end">
+                            <h2 className="mt-5">Developer</h2>
+                        </Row>
                         <Row>
                             <Col>
-                                <div className='portrait'><img src={Portrait9} alt="portrait" /></div>
+                                <div className='portrait-team'><img src={Pablo} alt="portrait" /></div>
                                 <div><b>Pablo Hernández Muñoz</b></div>
-                                <a href='#'>Learn more</a>
+                                <a href='https://github.com/Toblipa' target="_blank" rel="noopener noreferrer">Learn more</a>
                             </Col>
                         </Row>
                     </Col>

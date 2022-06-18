@@ -9,9 +9,6 @@ import Roadmap from "./components/Roadmap";
 import FAQ from "./components/FAQ";
 import Menu from "./components/Menu";
 
-import ImgRight from './img/bg-right.png';
-import ImgLeft from './img/bg-left.png';
-
 import './App.css';
 
 function App () {
@@ -60,32 +57,32 @@ function App () {
         <Menu scrollTo={scrollTo} ref={menuRef}/>
       </CSSTransition>
       <div>
-        <figure className="image-container"><img src={ImgRight}></img></figure>
+        <figure className="image-container bg-header-right bg-right" />
         <div className="content">
           <Header onClickDiscover={() => scrollToRef(aboutRef)} ref={headerRef}/>
           <About ref={aboutRef} />
         </div>
       </div>
       <div>
-        <figure className="image-container"><img src={ImgLeft}></img></figure>
+        <figure className="image-container bg-team bg-left" />
         <div className="content">
           <Team ref={teamRef} />
         </div>
       </div>
       <div>
-        <figure className="image-container"><img src={ImgRight}></img></figure>
+        <figure className="image-container bg-community bg-right" />
         <div className="content">
           <Community ref={communityRef} />
         </div>
       </div>
       <div>
-        <figure className="image-container"><img src={ImgLeft}></img></figure>
+        <figure className="image-container bg-roadmap bg-left" />
         <div className="content">
           <Roadmap ref={roadmapRef} />
         </div>
       </div>
       <div>
-        <figure className="image-container"><img src={ImgRight}></img></figure>
+        <figure className="image-container bg-faq bg-right" />
         <div className="content">
           <FAQ ref={faqRef} />
         </div>

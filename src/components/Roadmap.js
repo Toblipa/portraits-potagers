@@ -1,18 +1,18 @@
 import React, {forwardRef} from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
+import TitleRoadmap from '../img/titles/roadmap.png';
 import ImgRoadmap from '../img/roadmap.png';
-import ImgRoadmapComplet from '../img/roadmap-complet.png';
 
 const Roadmap = forwardRef(({}, ref) => {
     return (
         <section id="roadmap" className="roadmap" ref={ref}>
-            <Container>
+            <Container fluid>
                 <Row className="justify-content-md-end">
-                    <Col className="text-right" md="8">
+                    <Col className="text-right">
                         <Row>
-                            <div style={{marginLeft: 'auto'}} className='img-title  mb-5 justify-content-end'>
-                                <img src={ImgRoadmap} alt="Roadmap" />
+                            <div className='img-title mb-5 justify-content-end'>
+                                <img src={TitleRoadmap} alt="Roadmap" />
                             </div>
                         </Row>
                         <Row>
@@ -20,7 +20,7 @@ const Roadmap = forwardRef(({}, ref) => {
                                 <img src={ImgRoadmap} alt="Roadmap" />
                             </div> */}
                             <div style={{marginLeft: 'auto'}} className='justify-content-end'>
-                                <img src={ImgRoadmapComplet} alt="Roadmap" />
+                                <img src={ImgRoadmap} alt="Roadmap" />
                             </div>
                         </Row>
                     </Col>

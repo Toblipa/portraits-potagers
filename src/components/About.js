@@ -1,11 +1,19 @@
 import React, {forwardRef} from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
-import ImgConcept from '../img/concept.png';
-import Portrait9 from '../img/9.png';
-import Portrait12 from '../img/12.png';
+import TitleConcept from '../img/titles/concept.png';
 import Traits from '../img/traits.png';
 import RarityLevel from '../img/rarity-level.png';
+
+import Example1 from '../img/concept/exemple1.jpg';
+import Example2 from '../img/concept/exemple2.jpg';
+import Example3 from '../img/concept/exemple3.jpg';
+import Example4 from '../img/concept/exemple4.jpg';
+
+import RarityLevel1 from '../img/concept/rarity-level1.jpg';
+import RarityLevel2 from '../img/concept/rarity-level2.jpg';
+import RarityLevel3 from '../img/concept/rarity-level3.jpg';
+
 import Img1 from '../img/1..png';
 import Img2 from '../img/2..png';
 import Img3 from '../img/3..png';
@@ -13,58 +21,52 @@ import Img3 from '../img/3..png';
 const About = forwardRef(({}, ref) => {
     return (
         <section id="about" className="about" ref={ref}>
-            <Container>
+            <Container fluid>
                 <Row>
-                    <Col md="2" />
-                    <Col className="text-left" md="5">
-                        <div className='img-title mb-5'><img src={ImgConcept} alt="Concept" /></div>
+                    <Col className="text-left mb-5" md="7">
+                        <div className='img-title mb-5'><img src={TitleConcept} alt="Concept" /></div>
                         <p>
-                            As scientific illustrators, my partner and I decided to create a collection
-                            of 10 000 paintings made up of various hand-drawn fruits
-                            and vegetables rearranged in different Portraits.
+                            As <b>scientific illustrators</b>, my partner and I decided to create a collection
+                            of <b>1 111 paintings</b> made up of various <b>hand-drawn fruits
+                            and vegetables</b> rearranged in different Portraits.
                         </p>
                         <p>
-                            These are the NFT we sell as artworks for the price of an organic
-                            vegetable basket between 15 and 25 euros.<br />
+                            These are the NFT we sell as <b>artworks</b> for the price of an <b>organic
+                            vegetable basket</b> between <b>15 and 25</b> euros.<br />
                         </p>
                         <p>
-                            The sales will directly benefit our permacultural project and help enhancing
-                            local biodiversity.
+                            The sales will directly benefit our <b>permacultural project</b> and help <b>enhancing
+                            local biodiversity</b>.
                         </p>
                     </Col>
                 </Row>
                 <Row>
-                    <Col md="2" />
-                    <Col className="text-left flex" md="8">
-                        <div className='portrait'><img src={Portrait9} alt="portrait" /></div>
-                        <div className='portrait'><img src={Portrait12} alt="portrait" /></div>
+                    <Col className="text-left flex">
+                        <div className='portrait'><img src={Example1} alt="portrait" /></div>
+                        <div className='portrait'><img src={Example2} alt="portrait" /></div>
                     </Col>
                 </Row>
                 <Row>
-                    <Col md="2" />
-                    <Col className="text-left flex" md="8">
-                        <div className='portrait'><img src={Portrait9} alt="portrait" /></div>
-                        <div className='portrait'><img src={Portrait12} alt="portrait" /></div>
+                    <Col className="text-left flex">
+                        <div className='portrait'><img src={Example3} alt="portrait" /></div>
+                        <div className='portrait'><img src={Example4} alt="portrait" /></div>
                     </Col>
                 </Row>
                 <Row className='mt-5'>
-                    <Col md="2" />
-                    <Col className="text-left d-inline-flex" md="5">
-                        <div className='img-title'><img src={Traits} alt="200" /></div>
+                    <Col className="text-left d-inline-flex">
+                        <div className='number'><img src={Traits} alt="200" /></div>
                         <h2 className='title-bottom'>Traits</h2>
                     </Col>
                 </Row>
-                <Row className='mt-5'>
-                    <Col md="2" />
-                    <Col className="text-left d-inline-flex" md="5">
-                        <div className='img-title'><img src={RarityLevel} alt="3" /></div>
+                <Row className='mt-5 mb-5'>
+                    <Col className="text-left d-inline-flex">
+                        <div className='number'><img src={RarityLevel} alt="rarity-levels" /></div>
                         <h2 className='title-bottom'>Rarity levels</h2>
                     </Col>
                 </Row>
                 <Row className='mt-5'>
-                    <Col md="2" />
-                    <Col className="text-left d-inline-flex" md="8">
-                        <div className='portrait'><img src={Portrait9} alt="portrait" /></div>
+                    <Col className="text-left d-inline-flex">
+                        <div className='portrait'><img src={RarityLevel1} alt="3" /></div>
                         <div className='number title-bottom'><img src={Img1} alt="1" /></div>
                         <p className='title-bottom'>
                             <b>Fruits and vegetables</b><br /><br />
@@ -72,10 +74,9 @@ const About = forwardRef(({}, ref) => {
                         </p>
                     </Col>
                 </Row>
-                <Row className='mt-1'>
-                    <Col md="2" />
-                    <Col className="text-left d-inline-flex" md="8">
-                        <div className='portrait'><img src={Portrait9} alt="portrait" /></div>
+                <Row className='mt-3'>
+                    <Col className="text-left d-inline-flex">
+                        <div className='portrait'><img src={RarityLevel2} alt="RarityLevel2" /></div>
                         <div className='number title-bottom'><img src={Img2} alt="2" /></div>
                         <p className='title-bottom'>
                             <b>Animals</b><br /><br />
@@ -83,10 +84,9 @@ const About = forwardRef(({}, ref) => {
                         </p>
                     </Col>
                 </Row>
-                <Row className='mt-1'>
-                    <Col md="2" />
-                    <Col className="text-left d-inline-flex" md="8">
-                        <div className='portrait'><img src={Portrait9} alt="portrait" /></div>
+                <Row className='mt-3'>
+                    <Col className="text-left d-inline-flex">
+                        <div className='portrait'><img src={RarityLevel3} alt="RarityLevel3" /></div>
                         <div className='number title-bottom'><img src={Img3} alt="3" /></div>
                         <p className='title-bottom'>
                             <b>Garden and kitchen tools</b><br /><br />
