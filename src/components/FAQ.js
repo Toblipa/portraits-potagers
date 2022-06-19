@@ -31,8 +31,8 @@ const FAQ = forwardRef((_, ref) => {
                                 <p>NFT stands for <b>non-fungible token</b>. It has unique attributes that makes
                                 it different from something else in the same asset class. Like a painting,
                                 a plot of land or a diamond.</p>
-                                <p>Some of these assets are <b>physical</b> and <b>tangible</b> and others are <b>digital</b>
-                                and <b>intangible</b>.</p>
+                                <p>Some of these assets are <b>physical</b> and <b>tangible</b> and others
+                                 are <b>digital</b> and <b>intangible</b>.</p>
                                 <p>Now ‘Token’ refers to a <b>digital certificate</b> stored on a secure distributed
                                 database called a <b>blockchain</b>.</p>
                                 <p>This certificate is a <b>unique digital signature</b> that defines the <b>ownership of
@@ -89,7 +89,7 @@ const FAQ = forwardRef((_, ref) => {
                             </Accordion.Item>
                             <Accordion.Item eventKey="6">
                                 <Accordion.Header>
-                                    <span>DO I GET COMPLET OWNERSHIP OF MY PORTRAIT POTAGER?</span>
+                                    <span>DO I GET COMPLETE OWNERSHIP OF MY PORTRAIT POTAGER?</span>
                                     <i className="bi bi-chevron-right accordion-arrow" />
                                 </Accordion.Header>
                                 <Accordion.Body className="mt-3">

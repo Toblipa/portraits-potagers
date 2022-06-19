@@ -195,7 +195,7 @@ section.roadmap {
   border: 1px solid #fff;
   display: inline-block;
   margin: 0.5rem 1rem 0.5rem 0rem;
-  max-width: 22.5rem;
+  max-width: 22.5vw;
   width: auto;
   height: auto;
 }
@@ -204,7 +204,7 @@ section.roadmap {
   border: 1px solid #fff;
   display: inline-block;
   margin: 1rem 0rem;
-  max-width: 25rem;
+  max-width: 23vw;
   width: auto;
   height: auto;
 }
@@ -353,7 +353,7 @@ button[class="accordion-button"] .accordion-arrow::before {
   overflow: visible;
   position: sticky;
   position: -webkit-sticky;
-  top: 10rem;
+  top: 20vh;
   z-index: 1;
   display: flex;
   align-items: flex-start;
