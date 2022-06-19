@@ -47,8 +47,8 @@ const FAQ = forwardRef(({}, ref) => {
                                     <i className="bi bi-chevron-right accordion-arrow" />
                                 </Accordion.Header>
                                 <Accordion.Body className="mt-3">
-                                <p><b><a href='https://tezos.com/' target="_blank" rel="noopener noreferrer">Tezos</a></b> is a public blockchain with a significantly <b>low carbon footprint</b>
-                                thanks to its proof of stake protocol…</p>
+                                <p><b><a href='https://tezos.com/' target="_blank" rel="noopener noreferrer">Tezos</a></b> is
+                                a public blockchain with a significantly <b>low carbon footprint</b> thanks to its proof of stake protocol…</p>
                                 <p>As we promote an ethical art de vivre, this option seemed tailored
                                 to our specific project.</p>
                                 </Accordion.Body>
@@ -80,9 +80,9 @@ const FAQ = forwardRef(({}, ref) => {
                                     <i className="bi bi-chevron-right accordion-arrow" />
                                 </Accordion.Header>
                                 <Accordion.Body className="mt-3">
-                                <p>To do so, nothing simpler: join our Discord and follow the instructions from
-                                the “getting started” category and discover hidden channels reserved for
-                                NFT holders.</p>
+                                <p>To do so, nothing simpler: join our <a href="https://discord.com/invite/QsbBMNjYD4">Discord</a>
+                                and follow the instructions from the “getting started” category and discover hidden channels reserved
+                                for NFT holders.</p>
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="6">

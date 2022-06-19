@@ -13,6 +13,7 @@ import './App.css';
 
 function App () {
   const[showMenu, setShowMenu] = useState(false);
+  const[currentSection, setCurrentSection] = useState('Header');
   
   const menuRef = useRef();
   const headerRef = useRef();
@@ -29,17 +30,45 @@ function App () {
     "Community": communityRef,
     "Roadmap": roadmapRef,
     "FAQ": faqRef,
-  }
+  };
 
-  function scrollTo(name) {
-    if(refs[name].current){
-      scrollToRef(refs[name]);
+  const sectionHeight = (name) => {
+    if(name === 'About'){
+      return aboutRef.current.scrollHeight;
+    }
+    if(name === 'Team'){
+      return aboutRef.current.scrollHeight +
+        teamRef.current.scrollHeight;
+    }
+    if(name === 'Community'){
+      return aboutRef.current.scrollHeight +
+        teamRef.current.scrollHeight +
+        communityRef.current.scrollHeight;
+    }
+    if(name === 'Roadmap'){
+      return aboutRef.current.scrollHeight +
+        teamRef.current.scrollHeight +
+        communityRef.current.scrollHeight +
+        roadmapRef.current.scrollHeight;
+    }
+    if(name === 'FAQ'){
+      return aboutRef.current.scrollHeight +
+        teamRef.current.scrollHeight +
+        communityRef.current.scrollHeight +
+        roadmapRef.current.scrollHeight +
+        faqRef.current.scrollHeight;
     }
   }
 
+  const scrollTo = (name) => {
+    if(refs[name].current){
+      scrollToRef(refs[name]);
+    }
+  };
+
   const scrollToRef = (ref) => {
     ref.current.scrollIntoView({ behavior: 'smooth' })
-  }
+  };
   
   const onScroll = (e) => {
     const currentScrollY = e.target.scrollTop;
@@ -49,12 +78,32 @@ function App () {
     } else if(showMenu && currentScrollY < headerBottom){
       setShowMenu(false);
     }
-  }
+
+    // Check current section
+    if (currentScrollY < headerRef.current.scrollHeight) {
+      setCurrentSection('Header');
+    }
+    else if (currentScrollY < sectionHeight('About')) {
+      setCurrentSection('About');
+    }
+    else if(currentScrollY <  sectionHeight('Team')){
+      setCurrentSection('Team');
+    }
+    else if(currentScrollY <  sectionHeight('Community')){
+      setCurrentSection('Community');
+    }
+    else if(currentScrollY <  sectionHeight('Roadmap')){
+      setCurrentSection('Roadmap');
+    }
+    else if(currentScrollY <  sectionHeight('FAQ')){
+      setCurrentSection('FAQ');
+    }
+  };
   
   return (
     <div className="App" onScroll={onScroll}>
       <CSSTransition in={showMenu} timeout={300} classNames="side-menu" unmountOnExit>
-        <Menu scrollTo={scrollTo} ref={menuRef}/>
+        <Menu scrollTo={scrollTo} currentSection={currentSection} ref={menuRef}/>
       </CSSTransition>
       <div>
         <figure className="image-container bg-header-right bg-right" />

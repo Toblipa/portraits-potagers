@@ -375,6 +375,10 @@ button[class="accordion-button"] .accordion-arrow::before {
   text-decoration: none;
 }
 
+.side-nav a.active {
+  font-weight: 1000!important;
+}
+
 .side-nav > .side-menu {
   max-width: 350px;
   height: fit-content;
