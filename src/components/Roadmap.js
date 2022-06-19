@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import TitleRoadmap from '../img/titles/roadmap.png';
 import ImgRoadmap from '../img/roadmap.png';
 
-const Roadmap = forwardRef(({}, ref) => {
+const Roadmap = forwardRef((_, ref) => {
     return (
         <section id="roadmap" className="roadmap" ref={ref}>
             <Container fluid>

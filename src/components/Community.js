@@ -6,7 +6,7 @@ import ImgCommunity1 from '../img/community/community1.jpg';
 import ImgCommunity2 from '../img/community/community2.jpg';
 import ImgCommunity3 from '../img/community/community3.jpg';
 
-const Community = forwardRef(({}, ref) => {
+const Community = forwardRef((_, ref) => {
     return (
         <section id="community" className="community" ref={ref}>
             <Container fluid>

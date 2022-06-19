@@ -18,7 +18,7 @@ import Img1 from '../img/1..png';
 import Img2 from '../img/2..png';
 import Img3 from '../img/3..png';
 
-const About = forwardRef(({}, ref) => {
+const About = forwardRef((_, ref) => {
     return (
         <section id="about" className="about" ref={ref}>
             <Container fluid>
@@ -26,7 +26,7 @@ const About = forwardRef(({}, ref) => {
                     <Col className="text-left mb-5" md="7">
                         <div className='img-title mb-5'><img src={TitleConcept} alt="Concept" /></div>
                         <p>
-                            As <b>scientific illustrators</b>, my partner and I decided to create a collection
+                            As <b>scientific illustrators</b>, we decided to create a collection
                             of <b>1&nbsp;111 paintings</b> made up of various <b>hand-drawn fruits
                             and vegetables</b> rearranged in different Portraits.
                         </p>

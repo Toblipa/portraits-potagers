@@ -364,10 +364,7 @@ button[class="accordion-button"] .accordion-arrow::before {
 .side-nav a {
   text-decoration: none;
   color:#fff;
-  font-size: calc(12px + 2vmin);
-  font-weight: 400;
-  text-transform: uppercase;
-  display: block;
+  display: inline-block;
   cursor: pointer;
 }
 
@@ -375,7 +372,22 @@ button[class="accordion-button"] .accordion-arrow::before {
   text-decoration: none;
 }
 
-.side-nav a.active {
+.side-nav button {
+  text-decoration: none;
+  padding: 0px;
+  color:#fff;
+  font-size: calc(12px + 2vmin);
+  font-weight: 400;
+  text-transform: uppercase;
+  display: block;
+  cursor: pointer;
+}
+
+.side-nav button:hover {
+  text-decoration: none;
+}
+
+.side-nav button.active {
   font-weight: 1000!important;
 }
 

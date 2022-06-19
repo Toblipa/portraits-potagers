@@ -6,7 +6,7 @@ import Diane from '../img/team/diane.jpg';
 import Pablo from '../img/team/pablo.jpg';
 import Wladimir from '../img/team/wladimir.jpg';
 
-const Team = forwardRef(({}, ref) => {
+const Team = forwardRef((_, ref) => {
     return (
         <section id="team" className="team" ref={ref}>
             <Container fluid>

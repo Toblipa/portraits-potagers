@@ -3,7 +3,7 @@ import { Container, Row, Col, Accordion } from 'react-bootstrap';
 
 import TitleFaq from '../img/titles/faq.png';
 
-const FAQ = forwardRef(({}, ref) => {
+const FAQ = forwardRef((_, ref) => {
     return (
         <section id="faq" className="faq" ref={ref}>
             <Container fluid>
@@ -81,10 +81,10 @@ const FAQ = forwardRef(({}, ref) => {
                                     <i className="bi bi-chevron-right accordion-arrow" />
                                 </Accordion.Header>
                                 <Accordion.Body className="mt-3">
-                                <p>To do so, nothing simpler: join our
-                                <a href="https://discord.com/invite/QsbBMNjYD4" target="_blank" rel="noopener noreferrer">Discord</a>
-                                and follow the instructions from the “getting started” category and discover hidden channels reserved
-                                for NFT holders.</p>
+                                <p>To do so, nothing simpler:
+                                    join our <a href="https://discord.com/invite/QsbBMNjYD4" target="_blank" rel="noopener noreferrer">Discord</a> and
+                                    follow the instructions from the “getting started” category and discover hidden channels reserved for NFT holders.
+                                </p>
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="6">

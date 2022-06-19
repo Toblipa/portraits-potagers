@@ -102,7 +102,7 @@ function App () {
   
   return (
     <div className="App" onScroll={onScroll}>
-      <CSSTransition in={showMenu} timeout={300} classNames="side-menu" unmountOnExit>
+      <CSSTransition in={showMenu} timeout={300} classNames="side-menu" unmountOnExit nodeRef={menuRef}>
         <Menu scrollTo={scrollTo} currentSection={currentSection} ref={menuRef}/>
       </CSSTransition>
       <div>

@@ -11,37 +11,37 @@ const Menu = forwardRef(({scrollTo, currentSection}, ref) => {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" className="btn-toggle" />
             <Navbar.Collapse id="responsive-navbar-nav"  className='side-menu mg-5' >
                 <div className='wrapper-bg-gradient mb-5'>
-                    <a href="#" className='img-brand mb-5' onClick={() => scrollTo('Header')}>
+                    <button className='img-brand mb-5' onClick={() => scrollTo('Header')}>
                         <img src={TitleMenu} alt="portraits potagers" />
-                    </a>
-                    <a href="#" className={currentSection === 'About' ? 'active': ''} onClick={() => scrollTo('About')}>
+                    </button>
+                    <button className={currentSection === 'About' ? 'active': ''} onClick={() => scrollTo('About')}>
                         <span>Concept</span>
-                    </a>
-                    <a href="#" className={currentSection === 'Team' ? 'active': ''} onClick={() => scrollTo('Team')}>
+                    </button>
+                    <button className={currentSection === 'Team' ? 'active': ''} onClick={() => scrollTo('Team')}>
                         <span>Team</span>
-                    </a>
-                    <a href="#" className={currentSection === 'Community' ? 'active': ''} onClick={() => scrollTo('Community')}>
+                    </button>
+                    <button className={currentSection === 'Community' ? 'active': ''} onClick={() => scrollTo('Community')}>
                         <span>Community</span>
-                    </a>
-                    <a href="#" className={currentSection === 'Roadmap' ? 'active': ''} onClick={() => scrollTo('Roadmap')}>
+                    </button>
+                    <button className={currentSection === 'Roadmap' ? 'active': ''} onClick={() => scrollTo('Roadmap')}>
                         <span>Roadmap</span>
-                    </a>
-                    <a href="#" className={currentSection === 'FAQ' ? 'active': ''} onClick={() => scrollTo('FAQ')}>
+                    </button>
+                    <button className={currentSection === 'FAQ' ? 'active': ''} onClick={() => scrollTo('FAQ')}>
                         <span>FAQ</span>
-                    </a>
+                    </button>
                 </div>
                 <div className='social-media wrapper-bg-gradient mt-5'>
                     <p> Join us on
-                        <a href="https://discord.com/invite/QsbBMNjYD4" target="_blank" rel="noopener noreferrer" style={{display: "inline-block"}}>
+                        <a href="https://discord.com/invite/QsbBMNjYD4" target="_blank" rel="noopener noreferrer">
                             <img src={ImgDiscord} style={{width: '30px', margin:'0px 10px'}} alt="discord" />
                         </a>
-                        <a href="https://twitter.com/PPotagers" target="_blank" rel="noopener noreferrer" style={{display: "inline-block"}}>
+                        <a href="https://twitter.com/PPotagers" target="_blank" rel="noopener noreferrer">
                             <img src={ImgTwitter} style={{width: '30px'}} alt="twitter" />
                         </a>
                     </p>
                 </div>
             </Navbar.Collapse>
-        </Navbar>    
+        </Navbar>
     )
 });
 
