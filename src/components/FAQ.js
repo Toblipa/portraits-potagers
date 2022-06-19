@@ -69,7 +69,8 @@ const FAQ = forwardRef(({}, ref) => {
                                 </Accordion.Header>
                                 <Accordion.Body className="mt-3">
                                 <p>To purchase a Portrait Potager NFT, you must create your wallet
-                                with <b><a href='https://wallet.kukai.app/' target="_blank" rel="noopener noreferrer">Kukai</a></b>, a browser based wallet for the Tezos blockchain.</p>
+                                with <b><a href='https://wallet.kukai.app/' target="_blank" rel="noopener noreferrer">Kukai</a></b>,
+                                a browser based wallet for the Tezos blockchain.</p>
                                 <p>Once your payment is successfully processed, your purchased NFTs
                                 will be available in your wallet.</p>
                                 </Accordion.Body>
@@ -80,7 +81,8 @@ const FAQ = forwardRef(({}, ref) => {
                                     <i className="bi bi-chevron-right accordion-arrow" />
                                 </Accordion.Header>
                                 <Accordion.Body className="mt-3">
-                                <p>To do so, nothing simpler: join our <a href="https://discord.com/invite/QsbBMNjYD4">Discord</a>
+                                <p>To do so, nothing simpler: join our
+                                <a href="https://discord.com/invite/QsbBMNjYD4" target="_blank" rel="noopener noreferrer">Discord</a>
                                 and follow the instructions from the “getting started” category and discover hidden channels reserved
                                 for NFT holders.</p>
                                 </Accordion.Body>

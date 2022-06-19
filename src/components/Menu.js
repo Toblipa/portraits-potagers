@@ -32,10 +32,10 @@ const Menu = forwardRef(({scrollTo, currentSection}, ref) => {
                 </div>
                 <div className='social-media wrapper-bg-gradient mt-5'>
                     <p> Join us on
-                        <a href="https://discord.com/invite/QsbBMNjYD4" style={{display: "inline-block"}}>
+                        <a href="https://discord.com/invite/QsbBMNjYD4" target="_blank" rel="noopener noreferrer" style={{display: "inline-block"}}>
                             <img src={ImgDiscord} style={{width: '30px', margin:'0px 10px'}} alt="discord" />
                         </a>
-                        <a href="https://twitter.com/PPotagers" style={{display: "inline-block"}}>
+                        <a href="https://twitter.com/PPotagers" target="_blank" rel="noopener noreferrer" style={{display: "inline-block"}}>
                             <img src={ImgTwitter} style={{width: '30px'}} alt="twitter" />
                         </a>
                     </p>

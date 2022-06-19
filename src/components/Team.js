@@ -22,12 +22,12 @@ const Team = forwardRef(({}, ref) => {
                             <Col xl="5" className='mb-5'>
                                 <div className='portrait-team'><img src={Wladimir} alt="portrait" /></div>
                                 <div><b>Wladimir Peltzer</b> <br />Drawer</div>
-                                <a href="https://www.wladimirpeltzer.com/">Learn more</a>
+                                <a href="https://www.wladimirpeltzer.com/" target="_blank" rel="noopener noreferrer">Learn more</a>
                             </Col>
                             <Col xl="5">
                                 <div className='portrait-team'><img src={Diane} alt="portrait" /></div>
                                 <div><b>Diane Rottner</b> <br />Colorist</div>
-                                <a href="https://www.dianerottner.com/">Learn more</a>
+                                <a href="https://www.dianerottner.com/" target="_blank" rel="noopener noreferrer">Learn more</a>
                             </Col>
                         </Row>
                         <Row className="mt-5 justify-content-end">
