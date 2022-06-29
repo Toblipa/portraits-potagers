@@ -21,7 +21,7 @@ const Team = forwardRef((_, ref) => {
                         <Row className="mb-5 justify-content-md-end">
                             <Col xl="5" className='mb-5'>
                                 <div className='portrait-team'><img src={Wladimir} alt="portrait" /></div>
-                                <div><b>Wladimir Peltzer</b> <br />Drawer</div>
+                                <div><b>Wladimir Peltzer</b> <br />Illustrator</div>
                                 <a href="https://www.wladimirpeltzer.com/" target="_blank" rel="noopener noreferrer">Learn more</a>
                             </Col>
                             <Col xl="5">

@@ -59,7 +59,7 @@ const FAQ = forwardRef((_, ref) => {
                                     <i className="bi bi-chevron-right accordion-arrow" />
                                 </Accordion.Header>
                                 <Accordion.Body className="mt-3">
-                                    <p>We plan to open the public sale in <b>July</b>. More precisions in June.</p>
+                                    <p>We plan to open the public sale in <b>July</b>. More details soon.</p>
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="4">
