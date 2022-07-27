@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState } from 'react';
 import { CSSTransition } from "react-transition-group";
 
 import Header from './components/Header';
@@ -8,6 +8,7 @@ import Community from "./components/Community";
 import Roadmap from "./components/Roadmap";
 import FAQ from "./components/FAQ";
 import Menu from "./components/Menu";
+import Mint from "./components/Mint";
 
 import './App.css';
 
@@ -18,6 +19,7 @@ function App () {
   const menuRef = useRef();
   const headerRef = useRef();
   const aboutRef = useRef();
+  const mintRef = useRef();
   const teamRef = useRef();
   const communityRef = useRef();
   const roadmapRef = useRef();
@@ -26,6 +28,7 @@ function App () {
   const refs = {
     "Header": headerRef,
     "About": aboutRef,
+    "Mint": mintRef,
     "Team": teamRef,
     "Community": communityRef,
     "Roadmap": roadmapRef,
@@ -36,23 +39,31 @@ function App () {
     if(name === 'About'){
       return aboutRef.current.scrollHeight;
     }
+    if(name === 'Mint'){
+      return aboutRef.current.scrollHeight +
+        mintRef.current.scrollHeight;
+    }
     if(name === 'Team'){
       return aboutRef.current.scrollHeight +
+        mintRef.current.scrollHeight +
         teamRef.current.scrollHeight;
     }
     if(name === 'Community'){
       return aboutRef.current.scrollHeight +
+        mintRef.current.scrollHeight +
         teamRef.current.scrollHeight +
         communityRef.current.scrollHeight;
     }
     if(name === 'Roadmap'){
       return aboutRef.current.scrollHeight +
+        mintRef.current.scrollHeight +
         teamRef.current.scrollHeight +
         communityRef.current.scrollHeight +
         roadmapRef.current.scrollHeight;
     }
     if(name === 'FAQ'){
       return aboutRef.current.scrollHeight +
+        mintRef.current.scrollHeight +
         teamRef.current.scrollHeight +
         communityRef.current.scrollHeight +
         roadmapRef.current.scrollHeight +
@@ -86,6 +97,9 @@ function App () {
     else if (currentScrollY < sectionHeight('About')) {
       setCurrentSection('About');
     }
+    else if(currentScrollY <  sectionHeight('Mint')){
+      setCurrentSection('Mint');
+    }
     else if(currentScrollY <  sectionHeight('Team')){
       setCurrentSection('Team');
     }
@@ -110,6 +124,12 @@ function App () {
         <div className="content">
           <Header onClickDiscover={() => scrollToRef(aboutRef)} ref={headerRef}/>
           <About ref={aboutRef} />
+        </div>
+      </div>
+      <div>
+        <figure className="image-container bg-team bg-left" />
+        <div className="content">
+          <Mint ref={mintRef} />
         </div>
       </div>
       <div>
@@ -141,3 +161,4 @@ function App () {
 }
 
 export default App;
+

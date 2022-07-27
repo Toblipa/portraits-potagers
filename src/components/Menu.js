@@ -17,6 +17,9 @@ const Menu = forwardRef(({scrollTo, currentSection}, ref) => {
                     <button className={currentSection === 'About' ? 'active': ''} onClick={() => scrollTo('About')}>
                         <span>Concept</span>
                     </button>
+                    <button className={currentSection === 'Mint' ? 'active': ''} onClick={() => scrollTo('Mint')}>
+                        <span>Mint</span>
+                    </button>
                     <button className={currentSection === 'Team' ? 'active': ''} onClick={() => scrollTo('Team')}>
                         <span>Team</span>
                     </button>
