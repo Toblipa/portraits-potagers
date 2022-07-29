@@ -124,11 +124,6 @@ function App () {
         <div className="content">
           <Header onClickDiscover={() => scrollToRef(aboutRef)} ref={headerRef}/>
           <About ref={aboutRef} />
-        </div>
-      </div>
-      <div>
-        <figure className="image-container bg-team bg-left" />
-        <div className="content">
           <Mint ref={mintRef} />
         </div>
       </div>
