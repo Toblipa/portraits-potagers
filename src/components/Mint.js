@@ -2,7 +2,6 @@ import React,{ useEffect, useState, forwardRef } from 'react';
 import { Container, Row, Col, Spinner, Button, ProgressBar } from 'react-bootstrap';
 import { TezosToolkit} from "@taquito/taquito";
 import { BeaconWallet } from "@taquito/beacon-wallet";
-import { char2Bytes, bytes2Char } from "@taquito/utils";
 import config from '../config';
 
 import TitleConcept from '../img/titles/concept.png';
@@ -77,16 +76,14 @@ const Mint = forwardRef((_, ref) => {
 	const mint = async () => {
 		setMintingToken(true);
 		try {
-			// saves NFT on-chain
-			const contract = await Tezos.wallet.at(config.contractAddress);
+			// Saves NFT on-chain
+			const contract = await Tezos.wallet.at(config.crowdsaleContract);
 			const op = await contract.methods
-				.mint(1, userAddress, 1)
-				.send();
+				.mint1(nftQuantity)
+				.send({ amount: 1000000*nftQuantity, mutez: true });
 			console.log("Op hash:", op.opHash);
 			await op.confirmation();
-			setNewNft({
-				opHash: op.opHash,
-			});
+			setNewNft(op.opHash);
 		} catch (error) {
 			console.log(error);
 		} finally {
@@ -97,10 +94,10 @@ const Mint = forwardRef((_, ref) => {
     useEffect(() => {
         try {
             const func = async () => {
-				const contract = await Tezos.wallet.at(config.contractAddress);
+				const contract = await Tezos.wallet.at(config.tokenContract);
 				const storage = await contract.storage();
-				console.log(storage);
-				setMintedNfts(3.0);
+				const minted_tokens = await storage.total_minted;
+				setMintedNfts(minted_tokens.toNumber());
 				setTotalSupply(50.0);
             };
 			func();
@@ -165,9 +162,9 @@ const Mint = forwardRef((_, ref) => {
 								{!mintingToken && (
 									<Row className="justify-content-md-end">
 										<Button variant="outline-light" onClick={async () => await mint()}>Mint</Button>
-										<span>{newNft}</span>
 									</Row>
 								)}
+								{!mintingToken && newNft && (<div>Your transaction hash: {newNft}</div>)}
 							</div>
 						)}
 					</Col>
