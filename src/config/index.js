@@ -9,8 +9,9 @@ const config = {
     rpcUrl: "https://rpc.ghostnet.teztnets.xyz",
     networkType: NetworkType.GHOSTNET,
     serverUrl: "http://localhost:3005",
-    crowdsaleContract: "KT1NhDp849WbSxm36Fvc3y9APNPJx6Q2jrT3",
-    tokenContract: "KT1MBxD2D2cp8THGSiqNtgR455dzpWWEHYTF",
+    crowdsaleContract: "KT1Q1ckxMGn7HvfJee43uQNEfEpMea7JQrvg",
+    tokenContract: "KT1WAC7iXUfaqvBPmgY9R6GQ6mB6kUmJm562",
+    provenenceHash: "bafkreielvnhixhkiwlzzoqhgkshd47v5swezwkugk3lqwsjfubcg5wczma",
     walletOptions: {
         name: "Portraits Potagers",
         preferredNetwork: NetworkType.GHOSTNET,
