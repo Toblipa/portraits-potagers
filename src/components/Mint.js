@@ -84,6 +84,21 @@ const Mint = forwardRef((_, ref) => {
 		return uri.slice(0, 7) === "ipfs://" ? uri.slice(7) : uri;
 	}
 
+	async function wait(delay){
+		return new Promise((resolve) => setTimeout(resolve, delay));
+	}
+	
+	async function fetchRetry(url, delay, tries) {
+		function onError(err){
+			triesLeft = tries - 1;
+			if(!triesLeft){
+				throw err;
+			}
+			return wait(delay).then(() => fetchRetry(url, delay, triesLeft));
+		}
+		return fetch(url,fetchOptions).catch(onError);
+	}
+
 	const getUserNfts = async(userAdress) => {
 		const contract = await Tezos.wallet.at(config.tokenContract);
 		const storage = await contract.storage();
@@ -97,7 +112,11 @@ const Mint = forwardRef((_, ref) => {
 				const tokenInfoBytes = metadata.token_info.get("");
 				const tokenInfo = bytes2Char(tokenInfoBytes);
 				let jsonInfo = "";
-				const response = await fetch("https://gateway.pinata.cloud/ipfs/"+tokenInfo.slice(7));
+				const response = await fetchRetry(
+					"https://gateway.pinata.cloud/ipfs/"+tokenInfo.slice(7),
+					1000,
+					2
+				); // fetch("https://gateway.pinata.cloud/ipfs/"+tokenInfo.slice(7));
 				if(response.ok){
 					jsonInfo = await response.json();
 				}
