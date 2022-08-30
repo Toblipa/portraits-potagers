@@ -14,8 +14,11 @@ const Mint = forwardRef((_, ref) => {
 	const [Tezos, setTezos] = useState(new TezosToolkit(config.rpcUrl));
 	const [wallet, setWallet] = useState(null);
 	const [userAddress, setUserAddress] = useState("");
+	
 	const [loading, setLoading] = useState(true);
 	const [loadingProfile, setLoadingProfile] = useState(false);
+	const [loadingNFT, setLoadingNFT] = useState(false);
+
 	const [nftQuantity, setNftQuantity] = useState(1);
 	const [nftLevel, setNftLevel] = useState(3);
 	const [totalSupply, setTotalSupply] = useState(60);
@@ -56,8 +59,8 @@ const Mint = forwardRef((_, ref) => {
 		setLoadingProfile(true);
 		let wallet_instance = wallet;
 		if (!wallet) {
-				wallet_instance = new BeaconWallet(config.walletOptions);
-				setWallet(wallet_instance);
+			wallet_instance = new BeaconWallet(config.walletOptions);
+			setWallet(wallet_instance);
 		}
 		try {
 			await wallet_instance.requestPermissions({
@@ -68,16 +71,20 @@ const Mint = forwardRef((_, ref) => {
 			});
 			Tezos.setWalletProvider(wallet_instance);
 			const user_address = await wallet_instance.getPKH();
-			await getUserNfts(user_address);
-
 			setUserAddress(user_address);
 		} catch (err) {
 			console.log(err);
 			setError(err);
 		} finally {
 			setLoadingProfile(false);
-
 		}
+	};
+	
+	const disconnect = () => {
+		wallet.client.destroy();
+		setUserAddress("");
+		setWallet(null);
+		setUserNfts([]);
 	};
 
 	const getIpfsHash = (uri) => {
@@ -90,55 +97,52 @@ const Mint = forwardRef((_, ref) => {
 	
 	async function fetchRetry(url, delay, tries) {
 		function onError(err){
-			triesLeft = tries - 1;
+			const triesLeft = tries - 1;
 			if(!triesLeft){
 				throw err;
 			}
 			return wait(delay).then(() => fetchRetry(url, delay, triesLeft));
 		}
-		return fetch(url,fetchOptions).catch(onError);
+		return fetch(url).catch(onError);
 	}
 
 	const getUserNfts = async(userAdress) => {
-		const contract = await Tezos.wallet.at(config.tokenContract);
-		const storage = await contract.storage();
-		const tokenMetadata = await storage.token_metadata;
-		const tokenIds = await contract.contractViews.get_tokens_of(userAdress).executeView({ viewCaller: userAdress });
-		if (tokenIds) {
-			const userNfts = await Promise.all([
-			  ...tokenIds.map(async (id) => {
-				const tokenId = id.toNumber();
-				const metadata = await tokenMetadata.get(tokenId);
-				const tokenInfoBytes = metadata.token_info.get("");
-				const tokenInfo = bytes2Char(tokenInfoBytes);
-				let jsonInfo = "";
-				const response = await fetchRetry(
-					"https://gateway.pinata.cloud/ipfs/"+tokenInfo.slice(7),
-					1000,
-					2
-				); // fetch("https://gateway.pinata.cloud/ipfs/"+tokenInfo.slice(7));
-				if(response.ok){
-					jsonInfo = await response.json();
-				}
+		setLoadingNFT(true);
+		try{
+			const contract = await Tezos.wallet.at(config.tokenContract);
+			const storage = await contract.storage();
+			const tokenMetadata = await storage.token_metadata;
+			const tokenIds = await contract.contractViews.get_tokens_of(userAdress).executeView({ viewCaller: userAdress });
+			if (tokenIds) {
+				const userNfts = await Promise.all([
+					...tokenIds.map(async (id) => {
+						const tokenId = id.toNumber();
+						const metadata = await tokenMetadata.get(tokenId);
+						const tokenInfoBytes = metadata.token_info.get("");
+						const tokenInfo = bytes2Char(tokenInfoBytes);
+						let jsonInfo = "";
+						const response = await fetchRetry(
+							"https://gateway.pinata.cloud/ipfs/"+tokenInfo.slice(7),
+							1000,
+							3
+						); // fetch("https://gateway.pinata.cloud/ipfs/"+tokenInfo.slice(7));
+						if(response.ok){
+							jsonInfo = await response.json();
+						}
 
-				return {
-					tokenId,
-					ipfsHash: getIpfsHash(tokenInfo),
-					tokenInfo: jsonInfo
-				};
-			  }),
-			]);
-			setUserNfts(userNfts); 
-
+						return {
+							tokenId,
+							ipfsHash: getIpfsHash(tokenInfo),
+							tokenInfo: jsonInfo
+						};
+					}),
+				]);
+				setUserNfts(userNfts); 
+			}
+		} finally {
+			setLoadingNFT(false);
 		}
 	}
-
-	const disconnect = () => {
-		wallet.client.destroy();
-		setUserAddress("");
-		setWallet(null);
-		setUserNfts([]);
-	};
 
 	const mint = async () => {
 		if(isEditionSoldOut()){
@@ -171,12 +175,13 @@ const Mint = forwardRef((_, ref) => {
 			}
 			await op.confirmation();
 			setNewNft(op.opHash);
-			await getUserNfts(userAddress);
 		} catch (error) {
 			setError(error)
 		} finally {
 			setMintingToken(false);
 		}
+
+		await getUserNfts(userAddress);
 	};
 	
 	const isEditionSoldOut = () => {
@@ -185,7 +190,7 @@ const Mint = forwardRef((_, ref) => {
 
     useEffect(() => {
 		setLoading(true);
-		const func = async () => {
+		const func = async () => {			
 			try {
 				const contract = await Tezos.wallet.at(config.tokenContract);
 				const storage = await contract.storage();
@@ -210,7 +215,7 @@ const Mint = forwardRef((_, ref) => {
 		};
 		func();
 		
-    }, [Tezos]);
+    }, []);
 
 	
     useEffect(() => {
@@ -226,6 +231,12 @@ const Mint = forwardRef((_, ref) => {
 	useEffect(() => {
 		setPrice(nftQuantity*priceList[nftLevel-1]);
     }, [nftQuantity]);
+
+	useEffect(() => {
+		if(userAddress){
+			getUserNfts(userAddress);
+		}
+    }, [userAddress]);
 	
 	return (
 		<section id="mint" className="mint" ref={ref}>
@@ -330,32 +341,32 @@ const Mint = forwardRef((_, ref) => {
 										</Button>
 									</div>
 								</Alert>
-								
-								{userNfts && (
-									<div>
-										<h2>My Collection</h2>
-										<Row>
-											{userNfts.map((nft) => {
+								<div>
+									<h2>My Collection</h2>
+									<Row>
+										{loadingNFT ?
+											<Spinner animation="border" role="status" /> :
+											userNfts.map((nft) => {
 												return (
 													<Col key={`osamu-${nft.tokenId}`} className="mb-3" sm>
-														<span><a href={`https://cloudflare-ipfs.com/ipfs/${getIpfsHash(nft.tokenInfo.artifactUri)}`} target="_blank" rel="noopener noreferrer">
+														<span><a href={`https://ipfs.io/ipfs/${getIpfsHash(nft.tokenInfo.artifactUri)}`} target="_blank" rel="noopener noreferrer">
 															Osamu #{nft.tokenId}
 														</a></span>
 														<div className='portrait'>
-															<img src={`https://cloudflare-ipfs.com/ipfs/${getIpfsHash(nft.tokenInfo.thumbnailUri)}`} alt="NFT" />
+															<img src={`https://ipfs.io/ipfs/${getIpfsHash(nft.tokenInfo.thumbnailUri)}`} alt="NFT" />
 														</div>
 													</Col>
 												);
-											})}
-										</Row>
-									</div>
-								)}
+											})
+										}
+									</Row>
+								</div>
 							</div>
 						)}
 						<div className="mt-5">
-							<p>Crowdsale contract: <a href={`https://better-call.dev/ghostnet/${config.crowdsaleContract}`} target="_blank" rel="noopener noreferrer">{config.crowdsaleContract}</a></p>
-							<p>FA2 contract: <a href={`https://better-call.dev/ghostnet/${config.tokenContract}`} target="_blank" rel="noopener noreferrer">{config.tokenContract}</a></p>
-							<p>Provenence hash: {config.provenenceHash}</p>
+							<p style={{wordWrap: "break-word"}}>Crowdsale contract: <a href={`https://better-call.dev/ghostnet/${config.crowdsaleContract}`} target="_blank" rel="noopener noreferrer">{config.crowdsaleContract}</a></p>
+							<p style={{wordWrap: "break-word"}}>FA2 contract: <a href={`https://better-call.dev/ghostnet/${config.tokenContract}`} target="_blank" rel="noopener noreferrer">{config.tokenContract}</a></p>
+							<p style={{wordWrap: "break-word"}}>Provenence hash: {config.provenenceHash}</p>
 						</div>
 					</Col>
 				</Row>
