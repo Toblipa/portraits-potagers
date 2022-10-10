@@ -72,7 +72,7 @@ const FAQ = forwardRef((_, ref) => {
                                 with <b><a href='https://wallet.kukai.app/' target="_blank" rel="noopener noreferrer">Kukai</a></b>,
                                 a browser based wallet for the Tezos blockchain.</p>
                                 <p>Once your payment is successfully processed, your purchased NFTs
-                                will be available in your wallet.</p>
+                                will be available in your wallet and in <a href='https://objkt.com/collection/portraits-potagers' target="_blank" rel="noopener noreferrer">Objkt.com</a></p>
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="5">

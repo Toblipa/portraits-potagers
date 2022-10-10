@@ -21,11 +21,11 @@ const Mint = forwardRef((_, ref) => {
 
 	const [nftQuantity, setNftQuantity] = useState(1);
 	const [nftLevel, setNftLevel] = useState(3);
-	const [totalSupply, setTotalSupply] = useState(60);
+	const [totalSupply, setTotalSupply] = useState(1111);
 	const [mintedNfts, setMintedNfts] = useState(0);
-	const [priceList, setPriceList] = useState([1000000, 1500000, 2000000]);
-	const [price, setPrice] = useState(2000000);
-	const [editionsLeft, setEditionsLeft] = useState([15, 20, 25]);
+	const [priceList, setPriceList] = useState([10000000, 13000000, 16000000]);
+	const [price, setPrice] = useState(16000000);
+	const [editionsLeft, setEditionsLeft] = useState([111, 400, 600]);
 	const [mintingToken, setMintingToken] = useState(false);
 	const [newNft, setNewNft] = useState(null);
 	const [userNfts, setUserNfts] = useState([]);
@@ -122,10 +122,10 @@ const Mint = forwardRef((_, ref) => {
 						const tokenInfo = bytes2Char(tokenInfoBytes);
 						let jsonInfo = "";
 						const response = await fetchRetry(
-							"https://gateway.pinata.cloud/ipfs/"+tokenInfo.slice(7),
+							"https://portraits-potagers.mypinata.cloud/ipfs/"+tokenInfo.slice(7),
 							1000,
 							3
-						); // fetch("https://gateway.pinata.cloud/ipfs/"+tokenInfo.slice(7));
+						);
 						if(response.ok){
 							jsonInfo = await response.json();
 						}
@@ -206,7 +206,7 @@ const Mint = forwardRef((_, ref) => {
 				setPriceList([prices.price_1.toNumber(), prices.price_2.toNumber(), prices.price_3.toNumber()]);
 				setEditionsLeft([editions_left.left_1.toNumber(), editions_left.left_2.toNumber(), editions_left.left_3.toNumber()]);
 
-				setPrice(nftQuantity*priceList[nftLevel-1]);
+				setPrice(prices.price_3.toNumber());
 			} catch (err) {
 				setError(err);
 			} finally {
@@ -246,9 +246,9 @@ const Mint = forwardRef((_, ref) => {
                         <div className='img-title mb-5'><img src={TitleMint} alt="Mint" /></div>
 						{!loading && (
 							<div>
-								<p><b>{mintedNfts} out of {totalSupply} Osamus have been minted</b></p>
+								<p><b>{mintedNfts} out of {totalSupply} Portraits Potagers have been minted</b></p>
 								<div className="mb-5 mint-bar">
-									<div className="minted" style={{height:24, width: 100.0*mintedNfts/totalSupply+"%"}}></div>
+									<div className="minted" style={{height:14, width: 100.0*mintedNfts/totalSupply+"%"}}></div>
 								</div>
 							</div>
 						)}
@@ -321,7 +321,7 @@ const Mint = forwardRef((_, ref) => {
 								{!mintingToken && newNft && (
 									<Alert key="tx-hash" variant="info" className="mt-3">
 										<Alert.Heading>Thanks for your support!</Alert.Heading>
-										<span>Your transaction hash: <Alert.Link href={`https://ghostnet.tzkt.io/${newNft}`} target="_blank" rel="noopener noreferrer">{newNft}</Alert.Link></span>
+										<span>Your transaction hash: <Alert.Link href={`https://tzkt.io/${newNft}`} target="_blank" rel="noopener noreferrer">{newNft}</Alert.Link></span>
 										<hr />
 										<div className="d-flex justify-content-end">
 											<span>... which is kind of your NFT invoice</span>
@@ -348,9 +348,9 @@ const Mint = forwardRef((_, ref) => {
 											<Spinner animation="border" role="status" /> :
 											userNfts.map((nft) => {
 												return (
-													<Col key={`osamu-${nft.tokenId}`} className="mb-3" sm>
+													<Col key={`potager-${nft.tokenId}`} className="mb-3" sm>
 														<span><a href={`https://ipfs.io/ipfs/${getIpfsHash(nft.tokenInfo.artifactUri)}`} target="_blank" rel="noopener noreferrer">
-															Osamu #{nft.tokenId}
+															Potager #{nft.tokenId}
 														</a></span>
 														<div className='portrait'>
 															<img src={`https://ipfs.io/ipfs/${getIpfsHash(nft.tokenInfo.thumbnailUri)}`} alt="NFT" />
@@ -364,9 +364,9 @@ const Mint = forwardRef((_, ref) => {
 							</div>
 						)}
 						<div className="mt-5">
-							<p style={{wordWrap: "break-word"}}>Crowdsale contract: <a href={`https://better-call.dev/ghostnet/${config.crowdsaleContract}`} target="_blank" rel="noopener noreferrer">{config.crowdsaleContract}</a></p>
-							<p style={{wordWrap: "break-word"}}>FA2 contract: <a href={`https://better-call.dev/ghostnet/${config.tokenContract}`} target="_blank" rel="noopener noreferrer">{config.tokenContract}</a></p>
-							<p style={{wordWrap: "break-word"}}>Provenence hash: {config.provenenceHash}</p>
+							<p style={{wordWrap: "break-word"}}>Crowdsale contract: <a href={`https://better-call.dev/mainnet/${config.crowdsaleContract}`} target="_blank" rel="noopener noreferrer">{config.crowdsaleContract}</a></p>
+							<p style={{wordWrap: "break-word"}}>FA2 contract: <a href={`https://better-call.dev/mainnet/${config.tokenContract}`} target="_blank" rel="noopener noreferrer">{config.tokenContract}</a></p>
+							<p style={{wordWrap: "break-word"}}>Provenance hash: {config.provenanceHash}</p>
 						</div>
 					</Col>
 				</Row>

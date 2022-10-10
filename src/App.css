@@ -74,9 +74,15 @@ button {
   border: none;
   color: #fff;
   background-color: transparent;
+}
+
+.mint button {
+  border: solid 1px;
+  color: #fff;
+  background-color: transparent;
   border-radius: 1rem !important;
   text-transform: uppercase;
-  font-weight: 800 !important;
+  font-weight: 800 !important; 
 }
 
 figure {

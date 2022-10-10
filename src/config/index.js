@@ -6,18 +6,14 @@ import {
 } from "@airgap/beacon-dapp";
 
 const config = {
-    rpcUrl: "https://rpc.ghostnet.teztnets.xyz",
-    networkType: NetworkType.GHOSTNET,
-    serverUrl: "http://localhost:3005",
-    crowdsaleContract: "KT1MjuiwF6dWZphc1YYQKCowsiqdAsTKezKr",
-    //crowdsaleContract: "KT1Q1ckxMGn7HvfJee43uQNEfEpMea7JQrvg" <- OLD,
-    // crowdsaleContract: "KT1BSEZBx7aASxjmZNkfJsr8DrEaxobse3gt" <- test,
-    tokenContract: "KT1WAC7iXUfaqvBPmgY9R6GQ6mB6kUmJm562",
-    // tokenContract: "KT1CrYgBTEYkabDEXv7qiaD57Pz6iFx9cuWW",
-    provenenceHash: "bafkreielvnhixhkiwlzzoqhgkshd47v5swezwkugk3lqwsjfubcg5wczma",
+    rpcUrl: "https://rpc.tzbeta.net/",
+    networkType: NetworkType.MAINNET,
+    crowdsaleContract: "KT19ingJJZ3oKJX9EsAcffCyPw5VPM6p5pLc",
+    tokenContract: "KT1AAAMhfiWnLB6xVXrY25niEJt5sSL75pwy",
+    provenanceHash: "98642d3383333e252c63f425b49121cf853b65ff193535140b80b29a114bf533",
     walletOptions: {
         name: "Portraits Potagers",
-        preferredNetwork: NetworkType.GHOSTNET,
+        preferredNetwork: NetworkType.MAINNET,
         colorMode: ColorMode.DARK,
         disableDefaultEvents: false, // Disable all events / UI. This also disables the pairing alert.
         eventHandlers: {
