@@ -55,15 +55,6 @@ const FAQ = forwardRef((_, ref) => {
                             </Accordion.Item>
                             <Accordion.Item eventKey="3">
                                 <Accordion.Header>
-                                    <span>WHEN WILL THE NFTs BE AVAILABLE FOR SALE?</span>
-                                    <i className="bi bi-chevron-right accordion-arrow" />
-                                </Accordion.Header>
-                                <Accordion.Body className="mt-3">
-                                    <p>We plan to open the public sale in <b>July</b>. More details soon.</p>
-                                </Accordion.Body>
-                            </Accordion.Item>
-                            <Accordion.Item eventKey="4">
-                                <Accordion.Header>
                                     <span>HOW CAN I PURCHASE PORTRAITS POTAGERS NFTs?</span>
                                     <i className="bi bi-chevron-right accordion-arrow" />
                                 </Accordion.Header>
@@ -75,7 +66,7 @@ const FAQ = forwardRef((_, ref) => {
                                 will be available in your wallet and in <a href='https://objkt.com/collection/portraits-potagers' target="_blank" rel="noopener noreferrer">Objkt.com</a></p>
                                 </Accordion.Body>
                             </Accordion.Item>
-                            <Accordion.Item eventKey="5">
+                            <Accordion.Item eventKey="4">
                                 <Accordion.Header>
                                     <span>HOW CAN I GET ACCESS TO THE NFT HOLDERS CONTENT?</span>
                                     <i className="bi bi-chevron-right accordion-arrow" />
@@ -87,7 +78,7 @@ const FAQ = forwardRef((_, ref) => {
                                 </p>
                                 </Accordion.Body>
                             </Accordion.Item>
-                            <Accordion.Item eventKey="6">
+                            <Accordion.Item eventKey="5">
                                 <Accordion.Header>
                                     <span>DO I GET COMPLETE OWNERSHIP OF MY PORTRAIT POTAGER?</span>
                                     <i className="bi bi-chevron-right accordion-arrow" />
